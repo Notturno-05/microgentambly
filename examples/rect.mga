@@ -1,19 +1,38 @@
 OUT I will draw a rectangle\n
+#show welcome message
 INT w
+#initialize width
 INT h
-IN INT w l 
+#initialize height
+IN INT w l
+#input height as an int
 IN INT h h 
+#input width as an int
 INT wr
+#initialize width counter
 INT hr
+#initialize height counter
 SET wr 0
+#set width counter to 0
 SET hr 0
+# set height counter to 0
 :wrc
+#row label
 :wf
+#column label
 OUT *
+#put char
 INC wr
+#increment width counter
 JL wf wr w
+#loop until desired width
 OUT \n
+#put newline char
 SET wr 0
+# set width counter to 0
 INC hr
+#increment height counter
 JL wrc hr h
+#loop until desired height
 END
+#quit
