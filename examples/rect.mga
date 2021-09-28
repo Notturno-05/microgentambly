@@ -1,0 +1,19 @@
+OUT I will draw a rectangle\n
+INT w
+INT h
+IN INT w l 
+IN INT h h 
+INT wr
+INT hr
+SET wr 0
+SET hr 0
+:wrc
+:wf
+OUT *
+INC wr
+JL wf wr w
+OUT \n
+SET wr 0
+INC hr
+JL wrc hr h
+END
