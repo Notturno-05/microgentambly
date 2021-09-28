@@ -21,4 +21,4 @@ Current instruction set
 |**JME**|label,var1,var2 or value|If var2 or the value is more or equal than var 1, jump to label|`JME lab v1 v2`|
 |**OUT**|freeform text|output text $variable$s will be replaced|`OUT Hello $user$`|
 |**IN**|type,variable,request|Input a value, printing a text|`IN w Width`|
-|**END**|-|Quit program|`END'|
+|**END**|-|Quit program|`END`|
