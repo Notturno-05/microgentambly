@@ -22,9 +22,23 @@ try:
         elif ag[0]=="SET":
             vars[ag[1]]=ag[2]
         elif ag[0]=="DEC":
-            vars[ag[1]]=int(vars[ag[1]])-1
+            if len(ag)==3:
+                if(ag[2].isnumeric());
+                    n=int(ag[2])
+                else:
+                    n=int(vars[ag[2]])
+            else:
+                n = 1
+            vars[ag[1]]=int(vars[ag[1]])-n
         elif ag[0]=="INC":
-            vars[ag[1]]=int(vars[ag[1]])+1
+            if len(ag)==3:
+                if(ag[2].isnumeric());
+                    n=int(ag[2])
+                else:
+                    n=int(vars[ag[2]])
+            else:
+                n = 1
+            vars[ag[1]]=int(vars[ag[1]])+n
         elif ag[0]=="CP":
             vars[ag[1]]=vars[ag[2]]
         elif ag[0]=="JLE":
