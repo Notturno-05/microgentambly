@@ -1,11 +1,8 @@
 INT i
-INT im
 SET i 99
 :beg
     OUT bottles of beer on the wall,$i$ bottles of beer\n
-    CP im i
-    DEC im 1
-    OUT Take one down and pass it around, $im$ bottles of beer on the wall\n
     DEC i 1
+    OUT Take one down and pass it around, $i$ bottles of beer on the wall\n
 JME beg i 1
 END
