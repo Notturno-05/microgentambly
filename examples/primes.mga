@@ -2,10 +2,17 @@ INT tot
 INT n
 INT j
 INT te
-IN INT tot numero massimo
-SET n 0
+IN INT tot numero massimo 
+SET n 1
 :scn
+SET j 1
+OUT $n$\n
 :sieve
 MOD n j te
-JE sieve tot
-OUT $n$
+OUT j: $j$ \n
+OUT te: $te$ \n
+INC j
+JME scn j n
+JM sieve te 0
+INC n
+JLE scn n tot
