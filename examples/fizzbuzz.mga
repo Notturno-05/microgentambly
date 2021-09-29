@@ -1,0 +1,50 @@
+#Fizzbuzz
+INT n
+INT i
+INT nfizz
+INT nbuzz
+INT modfizz
+INT modbuzz
+
+SET n 0
+SET nfizz 3
+SET nbuzz 5
+SET modfizz 0
+SET modbuzz 0
+SET i 0
+
+IN INT n How many?\n
+
+:loop
+    OUT \n
+
+    MOD i nfizz modfizz
+    JE fizzdo modfizz 0
+    :fizzdone
+
+    MOD i nbuzz modbuzz
+    JE buzzdo modbuzz 0
+    :buzzdone
+
+    INC i 1
+
+    JE loop modbuzz 0
+    JE loop modfizz 0
+
+    DEC i 1
+    OUT $i$
+    INC i 1
+
+    JL loop i n
+    OUT \n
+    END 
+
+:fizzdo
+    OUT fizz
+    JMP fizzdone
+
+:buzzdo
+    OUT buzz
+    JMP buzzdone
+
+

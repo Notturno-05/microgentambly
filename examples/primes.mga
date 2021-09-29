@@ -5,14 +5,19 @@ INT te
 IN INT tot numero massimo 
 SET n 1
 :scn
-SET j 1
-OUT $n$\n
-:sieve
-MOD n j te
-OUT j: $j$ \n
-OUT te: $te$ \n
-INC j
-JME scn j n
-JM sieve te 0
-INC n
+    SET j 2
+    OUT $n$\n
+    :sieve
+        MOD n j te
+        #OUT \n- $te$ -\n
+        JME scr j n
+        INC j 1
+    JM sieve te 0
+    INC n
 JLE scn n tot
+END
+:scr
+#OUT $j$ sas\n
+SET j 2
+INC n
+JMP sieve

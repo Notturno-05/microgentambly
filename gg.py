@@ -13,12 +13,17 @@ def sostT(text,vars):
      return text
 try:
     for i in range(len(lines)):
+        if len(lines[i].strip()) == 0:
+            continue
         ag=lines[i].split(" ")
         if len(ag[0]):
             if ag[0][0]==":":
                 jumps[ag[0][1:]]=i
     i=0
     while lines[i].strip()!="END" or i > len(lines) :
+        if len(lines[i].strip()) == 0:
+             i+=1
+             continue
         #print(lines[i])
         if lines[i][0]=="#":
             i+=1
@@ -27,7 +32,7 @@ try:
         if ag[0] == "INT":
             vars[ag[1]]=0
         elif ag[0]=="SET":
-            vars[ag[1]]=ag[2]
+            vars[ag[1]]=int(ag[2])
         elif ag[0]=="DEC":
             if len(ag)==3:
                 if ag[2].isnumeric():
@@ -58,6 +63,8 @@ try:
             else:
                 modTerm=float(vars[ag[2]])
             vars[ag[3]]=m%modTerm
+        elif ag[0]=="JMP":
+            i = jumps[ag[1]]
         elif ag[0]=="JLE":
             if str(ag[3]).isnumeric():
                 athr=float(ag[3])
@@ -71,6 +78,13 @@ try:
             else:
                 athr=float(vars[ag[3]])
             if vars[ag[2]]>=athr:
+                i = jumps[ag[1]]
+        elif ag[0]=="JE":
+            if str(ag[3]).isnumeric():
+                athr=float(ag[3])
+            else:
+                athr=float(vars[ag[3]])
+            if vars[ag[2]]==athr:
                 i = jumps[ag[1]]
         elif ag[0]=="JL":
             if str(ag[3]).isnumeric():
