@@ -1,0 +1,11 @@
+INT tot
+INT n
+INT j
+INT te
+IN INT tot numero massimo
+SET n 0
+:scn
+:sieve
+MOD n j te
+JE sieve tot
+OUT $n$
