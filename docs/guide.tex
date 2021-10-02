@@ -1,0 +1,58 @@
+\documentclass[]{article}
+\title{\emph{Microgentambly} developer Guide\\ \small version 1.0}
+\author{Mattia Mascarello}
+
+\usepackage{adjustbox}
+
+\begin{document}
+	
+		\maketitle
+		\newpage
+		\tableofcontents
+		\newpage
+		\part{Preface}
+		
+		
+		You awake one day with a sense of dread, at first pinning it on the common annoyances of work, unaware of the descent you will experience over the next few months. The sleepless nights, the lack of joy, the inability to communicate your feelings to the seemingly happy and content figures that surround you. A rift develops between your former and present self. Hobbies no longer satisfy your desire for weekend escapism. Your loved ones notice peculiar behaviours but, unlike missing an arm, the symptoms aren’t noticeable enough to warrant a concern. And of course you wouldn’t want to bring them down.\\
+		
+		Talking about it only makes it real.\\
+		
+		Every now and then you feel elated, overjoyed with life and almost godlike. Your mania further drives away and confuses the only ones willing to listen. In twilight moments of self-reflection you see the totality of anguish. Your x-ray vision of despair lasers through the impermanence of it all, the insistent misery of being; your only sense of comfort, of stability, is your acknowledgment that there truly is nothing to be hopeful for.\\
+		
+		Make no mistake about people who leap from burning windows. Their terror of falling from a great height is still just as great as it would be for you or me standing speculatively at the same window just checking out the view; i.e. the fear of falling remains a constant. The variable here is the other terror, the fire’s flames: when the flames get close enough, falling to death becomes the slightly less terrible of two terrors. It’s not desiring the fall; it’s terror of the flames. \\
+		
+		The vanity of existence is revealed in the whole form existence assumes: in the infiniteness of time and space contrasted with the finiteness of the individual in both; in the fleeting present as the sole form in which actuality exists; in the contingency and relativity of all things; in continual becoming without being; in continual desire without satisfaction; in the continual frustration of striving of which life consists.
+		\\
+		
+		Congratulations, you have now understood the setting in which \emph{Microgentambly} was created, we may now proceed to examine the main language features.
+	\part{Main principles}
+	\emph{Microgentambly} is an assembly-like instruction set low level language executed through high-level python emulation, as such, a list of instructions is provided to developers as follows.
+	\section{Instructions}
+	Instructions are formed by a \verb|VRB| and a list of space-separated instructions.
+	This rule is followed by all instruction except input-output and string-related exceptions\\
+	\newpage
+	\begin{table}
+		\centering
+		\caption{List of instructions}
+		\label{my-label}
+		\begin{adjustbox}{width=\textwidth}
+		\begin{tabular}{|l|l|l|l|}
+			\hline
+			Instruction & Arguments & Description & Examples \\ \hline
+			\hline
+			\verb|INT| & variable\_name & Declares an integer & \verb|INT a| \\ \hline
+			\verb|SET| & variable\_name,value & Sets a value & \verb|SET a 0| \\ \hline
+			\verb|INC| & variable\_name & Increments variable by 1 & \verb|INC a| \\ \hline
+			\verb|DEC| & variable\_name & Decrements variable by 1 & \verb|DEC a| \\ \hline
+			\verb|CP| & var1,var2 & Copies the value of the left variable into the right one & \verb|CP a,b| \\ \hline
+			\verb|JL| & label,var1,var2 or value & If var2 or the value is less than var 1, jump to label & \verb|JL lab v1 v2| \\ \hline
+			\verb|JM| & label,var1,var2 or value & If var2 or the value is more than var 1, jump to label & \verb|JM lab v1 v2| \\ \hline
+			\verb|JLE| & label,var1,var2 or value & If var2 or the value is less or equal than var 1, jump to label & \verb|JLE lab v1 v2| \\ \hline
+			\verb|JME| & label,var1,var2 or value & If var2 or the value is more or equal than var 1, jump to label & \verb|JME lab v1 v2| \\ \hline
+			\verb|OUT| & freeform text & output text \$variable\$s will be replaced & \verb|OUT Hello $user$|\\ \hline
+			\verb|IN| & type,variable,request & Input a value, printing a text & \verb|IN w Width| \\ \hline
+			\verb|END| & - & Quit program & \verb|END| \\ \hline
+		\end{tabular}
+	\end{adjustbox}
+	\end{table}
+\end{document} 
