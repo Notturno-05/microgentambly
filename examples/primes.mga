@@ -1,23 +1,34 @@
-INT tot
-INT n
+INT i
 INT j
-INT te
-IN INT tot numero massimo 
-SET n 1
-:scn
-    SET j 2
-    OUT $n$\n
-    :sieve
-        MOD n j te
-        #OUT \n- $te$ -\n
-        JME scr j n
+INT n
+INT c
+INT modr
+
+IN INT n Enter the number till which you want prime numbers\n
+
+OUT Prime numbers are:\n
+
+SET i 2
+:loopi
+    SET c 0
+    SET j 1
+    :loopj
+        MOD i j modr
+        JE increasec modr 0
+        :increasecback
         INC j 1
-    JM sieve te 0
-    INC n
-JLE scn n tot
+    JLE loopj j i
+        JE printn c 2
+        :printback
+    INC i 1
+JLE loopi i n
 END
-:scr
-#OUT $j$ sas\n
-SET j 2
-INC n
-JMP sieve
+:increasec
+    INC c 1
+    JMP increasecback
+
+:printn
+    OUT $i$\n
+    JMP printback
+
+
